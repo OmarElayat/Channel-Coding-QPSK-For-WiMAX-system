@@ -13,7 +13,7 @@ RTL implementation of part of the PHY layer of a WiMax system; namely “Channel
 
 ![image](https://user-images.githubusercontent.com/107650627/209715377-0e23c843-1653-428b-935c-0389d2075a1c.png)
 
-Note: This project uses a PLL IP. The project was verified on a DE0-CV board using Quartus prime. Consider replacing the IP was a suitable one if you're using a different board or design software
+> Note: ***This project uses a PLL IP. The project was verified on a DE0-CV board using Quartus prime. Consider replacing the IP was a suitable one if you're using a different board or design software***
 
 ## Top Module (QPSK_phase3.vhd)
 
