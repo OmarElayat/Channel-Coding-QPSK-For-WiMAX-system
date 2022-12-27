@@ -1,3 +1,41 @@
+
+**Phase 2 Top Module** 
+
+**Ports:**
+
+
+
+|**Signal**  |**In /Out**  |**Width** |**Description** |
+| - | :- | - | - |
+|Clk\_50mhz |In  |1 |Input clock to the block of frequency 50MHz |
+|Data\_in |In  |1 |Input data |
+|Ready\_in |In  |1 |Signal to identify that input is ready |
+|Rst |In |1 |Reset |
+|Valid\_out |In |1 |Signal to identify that output is valid |
+|Q |Out |1 |Output data |
+|I |Out |1 |Output data |
+**Block Diagram:****  
+
+![](Aspose.Words.0933408b-d74b-4d55-a19c-c0bbb332a315.033.jpeg)
+
+**RTL:** 
+
+![](Aspose.Words.0933408b-d74b-4d55-a19c-c0bbb332a315.034.jpeg)
+
+1-  The data are processed in the four blocks 
+
+2-  The output stream is valid and continuous as long as the input stream is ready and 
+
+continuous. 
+
+**Waveform:**  
+
+![](Aspose.Words.0933408b-d74b-4d55-a19c-c0bbb332a315.035.jpeg)
+
+**Results:** 
+
+![](Aspose.Words.0933408b-d74b-4d55-a19c-c0bbb332a315.036.jpeg)
+
 **PRBS** 
 
 **Ports:**
@@ -202,40 +240,3 @@ parallelizin Permuti Serializing  ![](Aspose.Words.0933408b-d74b-4d55-a19c-c0bbb
 ![](Aspose.Words.0933408b-d74b-4d55-a19c-c0bbb332a315.032.png)
 
 **Timing and Functionality:** 
-
-**Phase 2 Top Module** 
-
-**Ports:**
-
-
-
-|**Signal**  |**In /Out**  |**Width** |**Description** |
-| - | :- | - | - |
-|Clk\_50mhz |In  |1 |Input clock to the block of frequency 50MHz |
-|Data\_in |In  |1 |Input data |
-|Ready\_in |In  |1 |Signal to identify that input is ready |
-|Rst |In |1 |Reset |
-|Valid\_out |In |1 |Signal to identify that output is valid |
-|Q |Out |1 |Output data |
-|I |Out |1 |Output data |
-**Block Diagram:****  
-
-![](Aspose.Words.0933408b-d74b-4d55-a19c-c0bbb332a315.033.jpeg)
-
-**RTL:** 
-
-![](Aspose.Words.0933408b-d74b-4d55-a19c-c0bbb332a315.034.jpeg)
-
-1-  The data are processed in the four blocks 
-
-2-  The output stream is valid and continuous as long as the input stream is ready and 
-
-continuous. 
-
-**Waveform:**  
-
-![](Aspose.Words.0933408b-d74b-4d55-a19c-c0bbb332a315.035.jpeg)
-
-**Results:** 
-
-![](Aspose.Words.0933408b-d74b-4d55-a19c-c0bbb332a315.036.jpeg)
