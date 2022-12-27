@@ -13,6 +13,8 @@ RTL implementation of part of the PHY layer of a WiMax system; namely “Channel
 
 ![image](https://user-images.githubusercontent.com/107650627/209715377-0e23c843-1653-428b-935c-0389d2075a1c.png)
 
+**Note: This project uses a PLL IP. The project was verified on a DE0-CV board using Quartus prime. Consider replacing the IP was a suitable one if you're using a different board or design software**
+
 ## Top Module (QPSK_phase3.vhd)
 
 **Ports:**
@@ -26,8 +28,8 @@ RTL implementation of part of the PHY layer of a WiMax system; namely “Channel
 |Ready\_in |In  |1 |Signal to identify that input is ready |
 |Rst |In |1 |Reset |
 |Valid\_out |In |1 |Signal to identify that output is valid |
-|Q |Out |1 |Output data |
-|I |Out |1 |Output data |
+|Q |Out |16 |Output data |
+|I |Out |16 |Output data |
 
 **Block Diagram:** 
 
@@ -39,9 +41,9 @@ RTL implementation of part of the PHY layer of a WiMax system; namely “Channel
 
 1-  The data are processed in the four blocks 
 
-2-  The output stream is valid and continuous as long as the input stream is ready and 
+2-  The output stream is valid and continuous as long as the input stream is ready and continuous.
 
-continuous. 
+3-  The I and Q points of the QPSK constellation is in Q15 format (16-bit fixed point, MSB as sign bit, 15 fractional bits, and two’s complement.)
 
 **Waveform:**  
 
