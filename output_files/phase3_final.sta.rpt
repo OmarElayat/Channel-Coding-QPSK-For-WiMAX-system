@@ -1,0 +1,926 @@
+Timing Analyzer report for phase3_final
+Sat Dec 17 23:01:22 2022
+Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow 1100mV 85C Model Fmax Summary
+  6. Timing Closure Recommendations
+  7. Slow 1100mV 85C Model Setup Summary
+  8. Slow 1100mV 85C Model Hold Summary
+  9. Slow 1100mV 85C Model Recovery Summary
+ 10. Slow 1100mV 85C Model Removal Summary
+ 11. Slow 1100mV 85C Model Minimum Pulse Width Summary
+ 12. Slow 1100mV 85C Model Metastability Summary
+ 13. Slow 1100mV 0C Model Fmax Summary
+ 14. Slow 1100mV 0C Model Setup Summary
+ 15. Slow 1100mV 0C Model Hold Summary
+ 16. Slow 1100mV 0C Model Recovery Summary
+ 17. Slow 1100mV 0C Model Removal Summary
+ 18. Slow 1100mV 0C Model Minimum Pulse Width Summary
+ 19. Slow 1100mV 0C Model Metastability Summary
+ 20. Fast 1100mV 85C Model Setup Summary
+ 21. Fast 1100mV 85C Model Hold Summary
+ 22. Fast 1100mV 85C Model Recovery Summary
+ 23. Fast 1100mV 85C Model Removal Summary
+ 24. Fast 1100mV 85C Model Minimum Pulse Width Summary
+ 25. Fast 1100mV 85C Model Metastability Summary
+ 26. Fast 1100mV 0C Model Setup Summary
+ 27. Fast 1100mV 0C Model Hold Summary
+ 28. Fast 1100mV 0C Model Recovery Summary
+ 29. Fast 1100mV 0C Model Removal Summary
+ 30. Fast 1100mV 0C Model Minimum Pulse Width Summary
+ 31. Fast 1100mV 0C Model Metastability Summary
+ 32. Multicorner Timing Analysis Summary
+ 33. Board Trace Model Assignments
+ 34. Input Transition Times
+ 35. Signal Integrity Metrics (Slow 1100mv 0c Model)
+ 36. Signal Integrity Metrics (Slow 1100mv 85c Model)
+ 37. Signal Integrity Metrics (Fast 1100mv 0c Model)
+ 38. Signal Integrity Metrics (Fast 1100mv 85c Model)
+ 39. Setup Transfers
+ 40. Hold Transfers
+ 41. Recovery Transfers
+ 42. Removal Transfers
+ 43. Report TCCS
+ 44. Report RSKM
+ 45. Unconstrained Paths Summary
+ 46. Clock Status Summary
+ 47. Unconstrained Input Ports
+ 48. Unconstrained Output Ports
+ 49. Unconstrained Input Ports
+ 50. Unconstrained Output Ports
+ 51. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2021  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-----------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                     ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                              ;
+; Revision Name         ; phase3_final                                        ;
+; Device Family         ; Cyclone V                                           ;
+; Device Name           ; 5CEBA4F23C7                                         ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Combined                                            ;
+; Rise/Fall Delays      ; Enabled                                             ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.25        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;  25.2%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ;
++----------------------------------------------------------------------------------+-----------+--------+------------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
+; Clock Name                                                                       ; Type      ; Period ; Frequency  ; Rise  ; Fall   ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master                                                                         ; Source                                                                              ; Targets                                                                              ;
++----------------------------------------------------------------------------------+-----------+--------+------------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
+; c[0]                                                                             ; Base      ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500  ;            ;           ;             ;       ;        ;           ;            ;          ;                                                                                ;                                                                                     ; { c[0] }                                                                             ;
+; clk                                                                              ; Base      ; 20.000 ; 50.0 MHz   ; 0.000 ; 10.000 ;            ;           ;             ;       ;        ;           ;            ;          ;                                                                                ;                                                                                     ; { clk }                                                                              ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; Generated ; 3.333  ; 300.0 MHz  ; 0.000 ; 1.666  ; 50.00      ; 2         ; 12          ;       ;        ;           ;            ; false    ; clk                                                                            ; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|refclkin      ; { dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] }   ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; Generated ; 20.000 ; 50.0 MHz   ; 0.000 ; 10.000 ; 50.00      ; 6         ; 1           ;       ;        ;           ;            ; false    ; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] ; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|vco0ph[0] ; { dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk } ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; Generated ; 10.000 ; 100.0 MHz  ; 0.000 ; 5.000  ; 50.00      ; 3         ; 1           ;       ;        ;           ;            ; false    ; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] ; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|vco0ph[0] ; { dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk } ;
+; QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0]                      ; Base      ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500  ;            ;           ;             ;       ;        ;           ;            ;          ;                                                                                ;                                                                                     ; { QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0] }                      ;
+; QPSK_top:dut|prbs:prbs_block|valid_out                                           ; Base      ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500  ;            ;           ;             ;       ;        ;           ;            ;          ;                                                                                ;                                                                                     ; { QPSK_top:dut|prbs:prbs_block|valid_out }                                           ;
++----------------------------------------------------------------------------------+-----------+--------+------------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Fmax Summary                                                                                     ;
++------------+-----------------+----------------------------------------------------------------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                                                                       ; Note ;
++------------+-----------------+----------------------------------------------------------------------------------+------+
+; 72.97 MHz  ; 72.97 MHz       ; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
+; 118.25 MHz ; 118.25 MHz      ; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
+; 188.39 MHz ; 188.39 MHz      ; c[0]                                                                             ;      ;
+; 312.3 MHz  ; 312.3 MHz       ; clk                                                                              ;      ;
++------------+-----------------+----------------------------------------------------------------------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
+----------------------------------
+; Timing Closure Recommendations ;
+----------------------------------
+HTML report is unavailable in plain text report export.
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Setup Summary                                                                       ;
++----------------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                            ; Slack  ; End Point TNS ;
++----------------------------------------------------------------------------------+--------+---------------+
+; QPSK_top:dut|prbs:prbs_block|valid_out                                           ; -7.564 ; -7.564        ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; -6.453 ; -1309.726     ;
+; QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0]                      ; -6.022 ; -1038.169     ;
+; c[0]                                                                             ; -4.308 ; -355.903      ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -4.001 ; -39.637       ;
+; clk                                                                              ; -3.654 ; -103.630      ;
++----------------------------------------------------------------------------------+--------+---------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Hold Summary                                                                        ;
++----------------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                            ; Slack  ; End Point TNS ;
++----------------------------------------------------------------------------------+--------+---------------+
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -5.244 ; -15.697       ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; -4.921 ; -620.011      ;
+; c[0]                                                                             ; 0.070  ; 0.000         ;
+; clk                                                                              ; 0.360  ; 0.000         ;
+; QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0]                      ; 3.078  ; 0.000         ;
+; QPSK_top:dut|prbs:prbs_block|valid_out                                           ; 6.004  ; 0.000         ;
++----------------------------------------------------------------------------------+--------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Recovery Summary                                                                   ;
++----------------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                            ; Slack ; End Point TNS ;
++----------------------------------------------------------------------------------+-------+---------------+
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 8.554 ; 0.000         ;
++----------------------------------------------------------------------------------+-------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Removal Summary                                                                    ;
++----------------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                            ; Slack ; End Point TNS ;
++----------------------------------------------------------------------------------+-------+---------------+
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.805 ; 0.000         ;
++----------------------------------------------------------------------------------+-------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Minimum Pulse Width Summary                                                        ;
++----------------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                            ; Slack ; End Point TNS ;
++----------------------------------------------------------------------------------+-------+---------------+
+; QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0]                      ; 0.047 ; 0.000         ;
+; c[0]                                                                             ; 0.111 ; 0.000         ;
+; QPSK_top:dut|prbs:prbs_block|valid_out                                           ; 0.455 ; 0.000         ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 1.666 ; 0.000         ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 3.647 ; 0.000         ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 8.646 ; 0.000         ;
+; clk                                                                              ; 9.351 ; 0.000         ;
++----------------------------------------------------------------------------------+-------+---------------+
+
+
+-----------------------------------------------
+; Slow 1100mV 85C Model Metastability Summary ;
+-----------------------------------------------
+The design MTBF is not calculated because there are no specified synchronizers in the design.
+Number of Synchronizer Chains Found: 11
+Shortest Synchronizer Chain: 2 Registers
+Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
+Worst Case Available Settling Time: 7.894 ns
+
+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 0C Model Fmax Summary                                                                                      ;
++------------+-----------------+----------------------------------------------------------------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                                                                       ; Note ;
++------------+-----------------+----------------------------------------------------------------------------------+------+
+; 75.49 MHz  ; 75.49 MHz       ; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
+; 120.51 MHz ; 120.51 MHz      ; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
+; 185.36 MHz ; 185.36 MHz      ; c[0]                                                                             ;      ;
+; 320.72 MHz ; 320.72 MHz      ; clk                                                                              ;      ;
++------------+-----------------+----------------------------------------------------------------------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 0C Model Setup Summary                                                                        ;
++----------------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                            ; Slack  ; End Point TNS ;
++----------------------------------------------------------------------------------+--------+---------------+
+; QPSK_top:dut|prbs:prbs_block|valid_out                                           ; -7.606 ; -7.606        ;
+; QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0]                      ; -6.075 ; -1055.555     ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; -6.017 ; -1202.028     ;
+; c[0]                                                                             ; -4.395 ; -386.801      ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -3.625 ; -33.951       ;
+; clk                                                                              ; -3.454 ; -96.162       ;
++----------------------------------------------------------------------------------+--------+---------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 0C Model Hold Summary                                                                         ;
++----------------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                            ; Slack  ; End Point TNS ;
++----------------------------------------------------------------------------------+--------+---------------+
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -5.229 ; -16.140       ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; -4.920 ; -621.445      ;
+; c[0]                                                                             ; 0.126  ; 0.000         ;
+; clk                                                                              ; 0.260  ; 0.000         ;
+; QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0]                      ; 3.086  ; 0.000         ;
+; QPSK_top:dut|prbs:prbs_block|valid_out                                           ; 6.022  ; 0.000         ;
++----------------------------------------------------------------------------------+--------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 0C Model Recovery Summary                                                                    ;
++----------------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                            ; Slack ; End Point TNS ;
++----------------------------------------------------------------------------------+-------+---------------+
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 8.643 ; 0.000         ;
++----------------------------------------------------------------------------------+-------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 0C Model Removal Summary                                                                     ;
++----------------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                            ; Slack ; End Point TNS ;
++----------------------------------------------------------------------------------+-------+---------------+
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.722 ; 0.000         ;
++----------------------------------------------------------------------------------+-------+---------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 0C Model Minimum Pulse Width Summary                                                          ;
++----------------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                            ; Slack  ; End Point TNS ;
++----------------------------------------------------------------------------------+--------+---------------+
+; QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0]                      ; -0.015 ; -0.037        ;
+; c[0]                                                                             ; 0.088  ; 0.000         ;
+; QPSK_top:dut|prbs:prbs_block|valid_out                                           ; 0.433  ; 0.000         ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 1.666  ; 0.000         ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 3.585  ; 0.000         ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 8.588  ; 0.000         ;
+; clk                                                                              ; 9.235  ; 0.000         ;
++----------------------------------------------------------------------------------+--------+---------------+
+
+
+----------------------------------------------
+; Slow 1100mV 0C Model Metastability Summary ;
+----------------------------------------------
+The design MTBF is not calculated because there are no specified synchronizers in the design.
+Number of Synchronizer Chains Found: 11
+Shortest Synchronizer Chain: 2 Registers
+Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
+Worst Case Available Settling Time: 7.986 ns
+
+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Fast 1100mV 85C Model Setup Summary                                                                       ;
++----------------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                            ; Slack  ; End Point TNS ;
++----------------------------------------------------------------------------------+--------+---------------+
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; -4.253 ; -838.750      ;
+; QPSK_top:dut|prbs:prbs_block|valid_out                                           ; -3.559 ; -3.559        ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -3.097 ; -28.660       ;
+; QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0]                      ; -2.629 ; -432.221      ;
+; clk                                                                              ; -2.039 ; -59.073       ;
+; c[0]                                                                             ; -1.415 ; -73.630       ;
++----------------------------------------------------------------------------------+--------+---------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Fast 1100mV 85C Model Hold Summary                                                                        ;
++----------------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                            ; Slack  ; End Point TNS ;
++----------------------------------------------------------------------------------+--------+---------------+
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; -2.672 ; -335.861      ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -2.561 ; -7.669        ;
+; c[0]                                                                             ; 0.107  ; 0.000         ;
+; clk                                                                              ; 0.195  ; 0.000         ;
+; QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0]                      ; 1.618  ; 0.000         ;
+; QPSK_top:dut|prbs:prbs_block|valid_out                                           ; 3.330  ; 0.000         ;
++----------------------------------------------------------------------------------+--------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Fast 1100mV 85C Model Recovery Summary                                                                   ;
++----------------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                            ; Slack ; End Point TNS ;
++----------------------------------------------------------------------------------+-------+---------------+
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 9.218 ; 0.000         ;
++----------------------------------------------------------------------------------+-------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Fast 1100mV 85C Model Removal Summary                                                                    ;
++----------------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                            ; Slack ; End Point TNS ;
++----------------------------------------------------------------------------------+-------+---------------+
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.368 ; 0.000         ;
++----------------------------------------------------------------------------------+-------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Fast 1100mV 85C Model Minimum Pulse Width Summary                                                        ;
++----------------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                            ; Slack ; End Point TNS ;
++----------------------------------------------------------------------------------+-------+---------------+
+; c[0]                                                                             ; 0.172 ; 0.000         ;
+; QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0]                      ; 0.193 ; 0.000         ;
+; QPSK_top:dut|prbs:prbs_block|valid_out                                           ; 0.480 ; 0.000         ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 1.666 ; 0.000         ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 3.897 ; 0.000         ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 8.896 ; 0.000         ;
+; clk                                                                              ; 9.399 ; 0.000         ;
++----------------------------------------------------------------------------------+-------+---------------+
+
+
+-----------------------------------------------
+; Fast 1100mV 85C Model Metastability Summary ;
+-----------------------------------------------
+The design MTBF is not calculated because there are no specified synchronizers in the design.
+Number of Synchronizer Chains Found: 11
+Shortest Synchronizer Chain: 2 Registers
+Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
+Worst Case Available Settling Time: 8.837 ns
+
+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Fast 1100mV 0C Model Setup Summary                                                                        ;
++----------------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                            ; Slack  ; End Point TNS ;
++----------------------------------------------------------------------------------+--------+---------------+
+; QPSK_top:dut|prbs:prbs_block|valid_out                                           ; -3.442 ; -3.442        ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; -3.288 ; -630.565      ;
+; QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0]                      ; -2.544 ; -424.584      ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -2.308 ; -21.253       ;
+; clk                                                                              ; -1.632 ; -46.047       ;
+; c[0]                                                                             ; -1.222 ; -80.394       ;
++----------------------------------------------------------------------------------+--------+---------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Fast 1100mV 0C Model Hold Summary                                                                         ;
++----------------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                            ; Slack  ; End Point TNS ;
++----------------------------------------------------------------------------------+--------+---------------+
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; -2.646 ; -335.731      ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -2.503 ; -7.499        ;
+; clk                                                                              ; 0.122  ; 0.000         ;
+; c[0]                                                                             ; 0.217  ; 0.000         ;
+; QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0]                      ; 1.663  ; 0.000         ;
+; QPSK_top:dut|prbs:prbs_block|valid_out                                           ; 3.263  ; 0.000         ;
++----------------------------------------------------------------------------------+--------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Fast 1100mV 0C Model Recovery Summary                                                                    ;
++----------------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                            ; Slack ; End Point TNS ;
++----------------------------------------------------------------------------------+-------+---------------+
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 9.326 ; 0.000         ;
++----------------------------------------------------------------------------------+-------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Fast 1100mV 0C Model Removal Summary                                                                     ;
++----------------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                            ; Slack ; End Point TNS ;
++----------------------------------------------------------------------------------+-------+---------------+
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.304 ; 0.000         ;
++----------------------------------------------------------------------------------+-------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Fast 1100mV 0C Model Minimum Pulse Width Summary                                                         ;
++----------------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                            ; Slack ; End Point TNS ;
++----------------------------------------------------------------------------------+-------+---------------+
+; c[0]                                                                             ; 0.217 ; 0.000         ;
+; QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0]                      ; 0.228 ; 0.000         ;
+; QPSK_top:dut|prbs:prbs_block|valid_out                                           ; 0.485 ; 0.000         ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 1.666 ; 0.000         ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 3.898 ; 0.000         ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 8.899 ; 0.000         ;
+; clk                                                                              ; 9.401 ; 0.000         ;
++----------------------------------------------------------------------------------+-------+---------------+
+
+
+----------------------------------------------
+; Fast 1100mV 0C Model Metastability Summary ;
+----------------------------------------------
+The design MTBF is not calculated because there are no specified synchronizers in the design.
+Number of Synchronizer Chains Found: 11
+Shortest Synchronizer Chain: 2 Registers
+Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
+Worst Case Available Settling Time: 8.974 ns
+
+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                                                                                 ;
++-----------------------------------------------------------------------------------+-----------+----------+----------+---------+---------------------+
+; Clock                                                                             ; Setup     ; Hold     ; Recovery ; Removal ; Minimum Pulse Width ;
++-----------------------------------------------------------------------------------+-----------+----------+----------+---------+---------------------+
+; Worst-case Slack                                                                  ; -7.606    ; -5.244   ; 8.554    ; 0.304   ; -0.015              ;
+;  QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0]                      ; -6.075    ; 1.618    ; N/A      ; N/A     ; -0.015              ;
+;  QPSK_top:dut|prbs:prbs_block|valid_out                                           ; -7.606    ; 3.263    ; N/A      ; N/A     ; 0.433               ;
+;  c[0]                                                                             ; -4.395    ; 0.070    ; N/A      ; N/A     ; 0.088               ;
+;  clk                                                                              ; -3.654    ; 0.122    ; N/A      ; N/A     ; 9.235               ;
+;  dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; N/A       ; N/A      ; N/A      ; N/A     ; 1.666               ;
+;  dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -4.001    ; -5.244   ; N/A      ; N/A     ; 8.588               ;
+;  dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; -6.453    ; -4.921   ; 8.554    ; 0.304   ; 3.585               ;
+; Design-wide TNS                                                                   ; -2854.629 ; -637.585 ; 0.0      ; 0.0     ; -0.037              ;
+;  QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0]                      ; -1055.555 ; 0.000    ; N/A      ; N/A     ; -0.037              ;
+;  QPSK_top:dut|prbs:prbs_block|valid_out                                           ; -7.606    ; 0.000    ; N/A      ; N/A     ; 0.000               ;
+;  c[0]                                                                             ; -386.801  ; 0.000    ; N/A      ; N/A     ; 0.000               ;
+;  clk                                                                              ; -103.630  ; 0.000    ; N/A      ; N/A     ; 0.000               ;
+;  dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; N/A       ; N/A      ; N/A      ; N/A     ; 0.000               ;
+;  dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -39.637   ; -16.140  ; N/A      ; N/A     ; 0.000               ;
+;  dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; -1309.726 ; -621.445 ; 0.000    ; 0.000   ; 0.000               ;
++-----------------------------------------------------------------------------------+-----------+----------+----------+---------+---------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                           ;
++------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin  ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; pass ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++-------------------------------------------------------------+
+; Input Transition Times                                      ;
++----------+--------------+-----------------+-----------------+
+; Pin      ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++----------+--------------+-----------------+-----------------+
+; clk      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; rst      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ready_in ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++----------+--------------+-----------------+-----------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1100mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ;
++------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin  ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; pass ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.15e-07 V                   ; 2.41 V              ; -0.0495 V           ; 0.18 V                               ; 0.115 V                              ; 4.54e-10 s                  ; 4.44e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 2.15e-07 V                  ; 2.41 V             ; -0.0495 V          ; 0.18 V                              ; 0.115 V                             ; 4.54e-10 s                 ; 4.44e-10 s                 ; No                        ; Yes                       ;
++------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1100mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ;
++------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin  ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; pass ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.52e-05 V                   ; 2.38 V              ; -0.0315 V           ; 0.205 V                              ; 0.182 V                              ; 4.74e-10 s                  ; 4.85e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 2.52e-05 V                  ; 2.38 V             ; -0.0315 V          ; 0.205 V                             ; 0.182 V                             ; 4.74e-10 s                 ; 4.85e-10 s                 ; No                        ; Yes                       ;
++------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1100mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ;
++------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin  ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; pass ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.14e-06 V                   ; 2.91 V              ; -0.121 V            ; 0.326 V                              ; 0.297 V                              ; 2.74e-10 s                  ; 2.8e-10 s                   ; No                         ; No                         ; 2.75 V                      ; 4.14e-06 V                  ; 2.91 V             ; -0.121 V           ; 0.326 V                             ; 0.297 V                             ; 2.74e-10 s                 ; 2.8e-10 s                  ; No                        ; No                        ;
++------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1100mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ;
++------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin  ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; pass ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000242 V                   ; 2.86 V              ; -0.0814 V           ; 0.36 V                               ; 0.156 V                              ; 3e-10 s                     ; 4.34e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000242 V                  ; 2.86 V             ; -0.0814 V          ; 0.36 V                              ; 0.156 V                             ; 3e-10 s                    ; 4.34e-10 s                 ; No                        ; No                        ;
++------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                                                                                                                                 ;
++----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+----------+----------+----------+----------+
+; From Clock                                                                       ; To Clock                                                                         ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+----------+----------+----------+----------+
+; c[0]                                                                             ; c[0]                                                                             ; 192      ; 0        ; 0        ; 0        ;
+; clk                                                                              ; c[0]                                                                             ; 192      ; 0        ; 0        ; 0        ;
+; c[0]                                                                             ; clk                                                                              ; 32       ; 32       ; 0        ; 0        ;
+; clk                                                                              ; clk                                                                              ; 714      ; 0        ; 0        ; 0        ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; clk                                                                              ; 254      ; 0        ; 0        ; 0        ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 271      ; 0        ; 0        ; 0        ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 125      ; 0        ; 0        ; 0        ;
+; QPSK_top:dut|prbs:prbs_block|valid_out                                           ; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 11       ; 14       ; 0        ; 0        ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 219      ; 0        ; 0        ; 0        ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 15994    ; 0        ; 0        ; 0        ;
+; QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0]                      ; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 640      ; 448      ; 0        ; 0        ;
+; QPSK_top:dut|prbs:prbs_block|valid_out                                           ; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 27       ; 27       ; 0        ; 0        ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0]                      ; 192      ; 0        ; 0        ; 0        ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; QPSK_top:dut|prbs:prbs_block|valid_out                                           ; 0        ; 0        ; 1        ; 0        ;
++----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                                                                                                                                  ;
++----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+----------+----------+----------+----------+
+; From Clock                                                                       ; To Clock                                                                         ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+----------+----------+----------+----------+
+; c[0]                                                                             ; c[0]                                                                             ; 192      ; 0        ; 0        ; 0        ;
+; clk                                                                              ; c[0]                                                                             ; 192      ; 0        ; 0        ; 0        ;
+; c[0]                                                                             ; clk                                                                              ; 32       ; 32       ; 0        ; 0        ;
+; clk                                                                              ; clk                                                                              ; 714      ; 0        ; 0        ; 0        ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; clk                                                                              ; 254      ; 0        ; 0        ; 0        ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 271      ; 0        ; 0        ; 0        ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 125      ; 0        ; 0        ; 0        ;
+; QPSK_top:dut|prbs:prbs_block|valid_out                                           ; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 11       ; 14       ; 0        ; 0        ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 219      ; 0        ; 0        ; 0        ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 15994    ; 0        ; 0        ; 0        ;
+; QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0]                      ; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 640      ; 448      ; 0        ; 0        ;
+; QPSK_top:dut|prbs:prbs_block|valid_out                                           ; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 27       ; 27       ; 0        ; 0        ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0]                      ; 192      ; 0        ; 0        ; 0        ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; QPSK_top:dut|prbs:prbs_block|valid_out                                           ; 0        ; 0        ; 1        ; 0        ;
++----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Recovery Transfers                                                                                                                                                                                              ;
++----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+----------+----------+----------+----------+
+; From Clock                                                                       ; To Clock                                                                         ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+----------+----------+----------+----------+
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 1        ; 0        ; 0        ; 0        ;
++----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removal Transfers                                                                                                                                                                                               ;
++----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+----------+----------+----------+----------+
+; From Clock                                                                       ; To Clock                                                                         ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+----------+----------+----------+----------+
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 1        ; 0        ; 0        ; 0        ;
++----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 2     ; 2    ;
+; Unconstrained Input Port Paths  ; 851   ; 851  ;
+; Unconstrained Output Ports      ; 1     ; 1    ;
+; Unconstrained Output Port Paths ; 1     ; 1    ;
++---------------------------------+-------+------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Status Summary                                                                                                                                                                          ;
++----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+-------------+
+; Target                                                                           ; Clock                                                                            ; Type      ; Status      ;
++----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+-------------+
+; QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0]                      ; QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0]                      ; Base      ; Constrained ;
+; QPSK_top:dut|prbs:prbs_block|valid_out                                           ; QPSK_top:dut|prbs:prbs_block|valid_out                                           ; Base      ; Constrained ;
+; c[0]                                                                             ; c[0]                                                                             ; Base      ; Constrained ;
+; clk                                                                              ; clk                                                                              ; Base      ; Constrained ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; Generated ; Constrained ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; Generated ; Constrained ;
+; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; Generated ; Constrained ;
++----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+-------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; ready_in   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; rst        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; pass        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; ready_in   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; rst        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; pass        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
+    Info: Processing started: Sat Dec 17 23:01:11 2022
+Info: Command: quartus_sta phase3_final -c phase3_final
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Warning (335093): The Timing Analyzer is analyzing 386 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'phase3_final.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained generated clocks found in the design. Calling "derive_pll_clocks -create_base_clocks"
+Info (332110): Deriving PLL clocks
+    Info (332110): create_clock -period 20.000 -waveform {0.000 10.000} -name clk clk
+    Info (332110): create_generated_clock -source {dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|refclkin} -divide_by 2 -multiply_by 12 -duty_cycle 50.00 -name {dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]} {dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]}
+    Info (332110): create_generated_clock -source {dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|vco0ph[0]} -divide_by 6 -duty_cycle 50.00 -name {dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk} {dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk}
+    Info (332110): create_generated_clock -source {dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|vco0ph[0]} -divide_by 3 -duty_cycle 50.00 -name {dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk} {dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk}
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0] QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0]
+    Info (332105): create_clock -period 1.000 -name QPSK_top:dut|prbs:prbs_block|valid_out QPSK_top:dut|prbs:prbs_block|valid_out
+    Info (332105): create_clock -period 1.000 -name c[0] c[0]
+Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL  from: refclkin  to: fbclk
+    Info (332098): Cell: dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
+    Info (332098): Cell: dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT  from: clkin[0]  to: clkout
+    Info (332098): Cell: dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1100mV 85C Model
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
+Info (332146): Worst-case setup slack is -7.564
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -7.564              -7.564 QPSK_top:dut|prbs:prbs_block|valid_out 
+    Info (332119):    -6.453           -1309.726 dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    -6.022           -1038.169 QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0] 
+    Info (332119):    -4.308            -355.903 c[0] 
+    Info (332119):    -4.001             -39.637 dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    -3.654            -103.630 clk 
+Info (332146): Worst-case hold slack is -5.244
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -5.244             -15.697 dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    -4.921            -620.011 dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.070               0.000 c[0] 
+    Info (332119):     0.360               0.000 clk 
+    Info (332119):     3.078               0.000 QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0] 
+    Info (332119):     6.004               0.000 QPSK_top:dut|prbs:prbs_block|valid_out 
+Info (332146): Worst-case recovery slack is 8.554
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     8.554               0.000 dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case removal slack is 0.805
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.805               0.000 dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case minimum pulse width slack is 0.047
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.047               0.000 QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0] 
+    Info (332119):     0.111               0.000 c[0] 
+    Info (332119):     0.455               0.000 QPSK_top:dut|prbs:prbs_block|valid_out 
+    Info (332119):     1.666               0.000 dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
+    Info (332119):     3.647               0.000 dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     8.646               0.000 dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     9.351               0.000 clk 
+Info (332114): Report Metastability: Found 11 synchronizer chains.
+    Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
+    Info (332114): Number of Synchronizer Chains Found: 11
+    Info (332114): Shortest Synchronizer Chain: 2 Registers
+    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
+    Info (332114): Worst Case Available Settling Time: 7.894 ns
+    Info (332114): 
+Info: Analyzing Slow 1100mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL  from: refclkin  to: fbclk
+    Info (332098): Cell: dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
+    Info (332098): Cell: dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT  from: clkin[0]  to: clkout
+    Info (332098): Cell: dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
+Info (332146): Worst-case setup slack is -7.606
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -7.606              -7.606 QPSK_top:dut|prbs:prbs_block|valid_out 
+    Info (332119):    -6.075           -1055.555 QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0] 
+    Info (332119):    -6.017           -1202.028 dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    -4.395            -386.801 c[0] 
+    Info (332119):    -3.625             -33.951 dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    -3.454             -96.162 clk 
+Info (332146): Worst-case hold slack is -5.229
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -5.229             -16.140 dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    -4.920            -621.445 dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.126               0.000 c[0] 
+    Info (332119):     0.260               0.000 clk 
+    Info (332119):     3.086               0.000 QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0] 
+    Info (332119):     6.022               0.000 QPSK_top:dut|prbs:prbs_block|valid_out 
+Info (332146): Worst-case recovery slack is 8.643
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     8.643               0.000 dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case removal slack is 0.722
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.722               0.000 dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case minimum pulse width slack is -0.015
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -0.015              -0.037 QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0] 
+    Info (332119):     0.088               0.000 c[0] 
+    Info (332119):     0.433               0.000 QPSK_top:dut|prbs:prbs_block|valid_out 
+    Info (332119):     1.666               0.000 dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
+    Info (332119):     3.585               0.000 dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     8.588               0.000 dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     9.235               0.000 clk 
+Info (332114): Report Metastability: Found 11 synchronizer chains.
+    Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
+    Info (332114): Number of Synchronizer Chains Found: 11
+    Info (332114): Shortest Synchronizer Chain: 2 Registers
+    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
+    Info (332114): Worst Case Available Settling Time: 7.986 ns
+    Info (332114): 
+Info: Analyzing Fast 1100mV 85C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL  from: refclkin  to: fbclk
+    Info (332098): Cell: dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
+    Info (332098): Cell: dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT  from: clkin[0]  to: clkout
+    Info (332098): Cell: dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
+Info (332146): Worst-case setup slack is -4.253
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -4.253            -838.750 dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    -3.559              -3.559 QPSK_top:dut|prbs:prbs_block|valid_out 
+    Info (332119):    -3.097             -28.660 dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    -2.629            -432.221 QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0] 
+    Info (332119):    -2.039             -59.073 clk 
+    Info (332119):    -1.415             -73.630 c[0] 
+Info (332146): Worst-case hold slack is -2.672
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.672            -335.861 dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    -2.561              -7.669 dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.107               0.000 c[0] 
+    Info (332119):     0.195               0.000 clk 
+    Info (332119):     1.618               0.000 QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0] 
+    Info (332119):     3.330               0.000 QPSK_top:dut|prbs:prbs_block|valid_out 
+Info (332146): Worst-case recovery slack is 9.218
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     9.218               0.000 dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case removal slack is 0.368
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.368               0.000 dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case minimum pulse width slack is 0.172
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.172               0.000 c[0] 
+    Info (332119):     0.193               0.000 QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0] 
+    Info (332119):     0.480               0.000 QPSK_top:dut|prbs:prbs_block|valid_out 
+    Info (332119):     1.666               0.000 dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
+    Info (332119):     3.897               0.000 dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     8.896               0.000 dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     9.399               0.000 clk 
+Info (332114): Report Metastability: Found 11 synchronizer chains.
+    Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
+    Info (332114): Number of Synchronizer Chains Found: 11
+    Info (332114): Shortest Synchronizer Chain: 2 Registers
+    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
+    Info (332114): Worst Case Available Settling Time: 8.837 ns
+    Info (332114): 
+Info: Analyzing Fast 1100mV 0C Model
+Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL  from: refclkin  to: fbclk
+    Info (332098): Cell: dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
+    Info (332098): Cell: dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT  from: clkin[0]  to: clkout
+    Info (332098): Cell: dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
+Info (332146): Worst-case setup slack is -3.442
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.442              -3.442 QPSK_top:dut|prbs:prbs_block|valid_out 
+    Info (332119):    -3.288            -630.565 dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    -2.544            -424.584 QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0] 
+    Info (332119):    -2.308             -21.253 dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    -1.632             -46.047 clk 
+    Info (332119):    -1.222             -80.394 c[0] 
+Info (332146): Worst-case hold slack is -2.646
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.646            -335.731 dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    -2.503              -7.499 dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.122               0.000 clk 
+    Info (332119):     0.217               0.000 c[0] 
+    Info (332119):     1.663               0.000 QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0] 
+    Info (332119):     3.263               0.000 QPSK_top:dut|prbs:prbs_block|valid_out 
+Info (332146): Worst-case recovery slack is 9.326
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     9.326               0.000 dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case removal slack is 0.304
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.304               0.000 dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case minimum pulse width slack is 0.217
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.217               0.000 c[0] 
+    Info (332119):     0.228               0.000 QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0] 
+    Info (332119):     0.485               0.000 QPSK_top:dut|prbs:prbs_block|valid_out 
+    Info (332119):     1.666               0.000 dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
+    Info (332119):     3.898               0.000 dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     8.899               0.000 dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     9.401               0.000 clk 
+Info (332114): Report Metastability: Found 11 synchronizer chains.
+    Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
+    Info (332114): Number of Synchronizer Chains Found: 11
+    Info (332114): Shortest Synchronizer Chain: 2 Registers
+    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
+    Info (332114): Worst Case Available Settling Time: 8.974 ns
+    Info (332114): 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 5113 megabytes
+    Info: Processing ended: Sat Dec 17 23:01:22 2022
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:13
+
+

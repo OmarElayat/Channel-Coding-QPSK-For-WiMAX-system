@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file path="Clock_100MHz_sim/Clock_100MHz.vho" type="VHDL" />
+ <topLevel name="Clock_100MHz" />
+ <deviceFamily name="cyclonev" />
+</simPackage>

@@ -1,0 +1,341 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'QPSK_top:dut|prbs:prbs_block|valid_out'
+Slack : -7.564
+TNS   : -7.564
+
+Type  : Slow 1100mV 85C Model Setup 'dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -6.453
+TNS   : -1309.726
+
+Type  : Slow 1100mV 85C Model Setup 'QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0]'
+Slack : -6.022
+TNS   : -1038.169
+
+Type  : Slow 1100mV 85C Model Setup 'c[0]'
+Slack : -4.308
+TNS   : -355.903
+
+Type  : Slow 1100mV 85C Model Setup 'dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -4.001
+TNS   : -39.637
+
+Type  : Slow 1100mV 85C Model Setup 'clk'
+Slack : -3.654
+TNS   : -103.630
+
+Type  : Slow 1100mV 85C Model Hold 'dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -5.244
+TNS   : -15.697
+
+Type  : Slow 1100mV 85C Model Hold 'dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -4.921
+TNS   : -620.011
+
+Type  : Slow 1100mV 85C Model Hold 'c[0]'
+Slack : 0.070
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'clk'
+Slack : 0.360
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0]'
+Slack : 3.078
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'QPSK_top:dut|prbs:prbs_block|valid_out'
+Slack : 6.004
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Recovery 'dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 8.554
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Removal 'dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.805
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0]'
+Slack : 0.047
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'c[0]'
+Slack : 0.111
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'QPSK_top:dut|prbs:prbs_block|valid_out'
+Slack : 0.455
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
+Slack : 1.666
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 3.647
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 8.646
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clk'
+Slack : 9.351
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'QPSK_top:dut|prbs:prbs_block|valid_out'
+Slack : -7.606
+TNS   : -7.606
+
+Type  : Slow 1100mV 0C Model Setup 'QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0]'
+Slack : -6.075
+TNS   : -1055.555
+
+Type  : Slow 1100mV 0C Model Setup 'dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -6.017
+TNS   : -1202.028
+
+Type  : Slow 1100mV 0C Model Setup 'c[0]'
+Slack : -4.395
+TNS   : -386.801
+
+Type  : Slow 1100mV 0C Model Setup 'dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -3.625
+TNS   : -33.951
+
+Type  : Slow 1100mV 0C Model Setup 'clk'
+Slack : -3.454
+TNS   : -96.162
+
+Type  : Slow 1100mV 0C Model Hold 'dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -5.229
+TNS   : -16.140
+
+Type  : Slow 1100mV 0C Model Hold 'dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -4.920
+TNS   : -621.445
+
+Type  : Slow 1100mV 0C Model Hold 'c[0]'
+Slack : 0.126
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'clk'
+Slack : 0.260
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0]'
+Slack : 3.086
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'QPSK_top:dut|prbs:prbs_block|valid_out'
+Slack : 6.022
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Recovery 'dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 8.643
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Removal 'dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.722
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0]'
+Slack : -0.015
+TNS   : -0.037
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'c[0]'
+Slack : 0.088
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'QPSK_top:dut|prbs:prbs_block|valid_out'
+Slack : 0.433
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
+Slack : 1.666
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 3.585
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 8.588
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clk'
+Slack : 9.235
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -4.253
+TNS   : -838.750
+
+Type  : Fast 1100mV 85C Model Setup 'QPSK_top:dut|prbs:prbs_block|valid_out'
+Slack : -3.559
+TNS   : -3.559
+
+Type  : Fast 1100mV 85C Model Setup 'dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -3.097
+TNS   : -28.660
+
+Type  : Fast 1100mV 85C Model Setup 'QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0]'
+Slack : -2.629
+TNS   : -432.221
+
+Type  : Fast 1100mV 85C Model Setup 'clk'
+Slack : -2.039
+TNS   : -59.073
+
+Type  : Fast 1100mV 85C Model Setup 'c[0]'
+Slack : -1.415
+TNS   : -73.630
+
+Type  : Fast 1100mV 85C Model Hold 'dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -2.672
+TNS   : -335.861
+
+Type  : Fast 1100mV 85C Model Hold 'dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -2.561
+TNS   : -7.669
+
+Type  : Fast 1100mV 85C Model Hold 'c[0]'
+Slack : 0.107
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'clk'
+Slack : 0.195
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0]'
+Slack : 1.618
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'QPSK_top:dut|prbs:prbs_block|valid_out'
+Slack : 3.330
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Recovery 'dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 9.218
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.368
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'c[0]'
+Slack : 0.172
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0]'
+Slack : 0.193
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'QPSK_top:dut|prbs:prbs_block|valid_out'
+Slack : 0.480
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
+Slack : 1.666
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 3.897
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 8.896
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clk'
+Slack : 9.399
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'QPSK_top:dut|prbs:prbs_block|valid_out'
+Slack : -3.442
+TNS   : -3.442
+
+Type  : Fast 1100mV 0C Model Setup 'dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -3.288
+TNS   : -630.565
+
+Type  : Fast 1100mV 0C Model Setup 'QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0]'
+Slack : -2.544
+TNS   : -424.584
+
+Type  : Fast 1100mV 0C Model Setup 'dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -2.308
+TNS   : -21.253
+
+Type  : Fast 1100mV 0C Model Setup 'clk'
+Slack : -1.632
+TNS   : -46.047
+
+Type  : Fast 1100mV 0C Model Setup 'c[0]'
+Slack : -1.222
+TNS   : -80.394
+
+Type  : Fast 1100mV 0C Model Hold 'dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -2.646
+TNS   : -335.731
+
+Type  : Fast 1100mV 0C Model Hold 'dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : -2.503
+TNS   : -7.499
+
+Type  : Fast 1100mV 0C Model Hold 'clk'
+Slack : 0.122
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'c[0]'
+Slack : 0.217
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0]'
+Slack : 1.663
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'QPSK_top:dut|prbs:prbs_block|valid_out'
+Slack : 3.263
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Recovery 'dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 9.326
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Removal 'dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.304
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'c[0]'
+Slack : 0.217
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'QPSK_top:dut|inter_top:inter_block|sipo:sipo_r|count_reg[0]'
+Slack : 0.228
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'QPSK_top:dut|prbs:prbs_block|valid_out'
+Slack : 0.485
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
+Slack : 1.666
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'dut|pll|clock_100mhz_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 3.898
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'dut|pll|clock_100mhz_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 8.899
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clk'
+Slack : 9.401
+TNS   : 0.000
+
+------------------------------------------------------------

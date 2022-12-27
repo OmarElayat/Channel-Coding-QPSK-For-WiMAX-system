@@ -1,0 +1,7 @@
+
+State Machine - |QPSK_phase3|QPSK_top:dut|fec:fec_block|state_reg
+Name state_reg.transmit state_reg.out_xy state_reg.recieve state_reg.idle 
+state_reg.idle 0 0 0 0 
+state_reg.recieve 0 0 1 1 
+state_reg.out_xy 0 1 0 1 
+state_reg.transmit 1 0 0 1 
