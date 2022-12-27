@@ -3,7 +3,7 @@ RTL implementation of part of the PHY layer of a WiMax system; namely “Channel
 
 ![image](https://user-images.githubusercontent.com/107650627/209715272-3f0f1dbf-6363-48d6-a603-fd293e160141.png)
 
-##Channel Coding Procedures##
+##Channel Coding Procedures
 1.	Randomization (see 8.4.9.1).
 2.	FEC encoding (see 8.4.9.2).
 3.	Bit interleaving (see 8.4.9.3).
@@ -29,7 +29,7 @@ RTL implementation of part of the PHY layer of a WiMax system; namely “Channel
 |Q |Out |1 |Output data |
 |I |Out |1 |Output data |
 
-**Block Diagram:****  
+**Block Diagram:** 
 
 ![](Aspose.Words.0933408b-d74b-4d55-a19c-c0bbb332a315.033.jpeg)
 
