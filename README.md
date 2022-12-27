@@ -1,11 +1,3 @@
-![](Aspose.Words.0933408b-d74b-4d55-a19c-c0bbb332a315.001.png)
-
-ECNG 4104      ASIC Design     Project Report    Fall 2022        December 3, 2022 
-
-By: 
-
-Bishoy Sabry  -  900183106 Omar Elayat  -  900182568 
-
 **PRBS** 
 
 **Ports:**
