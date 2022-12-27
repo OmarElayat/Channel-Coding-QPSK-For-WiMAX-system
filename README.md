@@ -1,4 +1,3 @@
-RTL Implementation of a channel coding (QPSK) for a WiMAX system on a DE0-CV FPGA, using VHDL on Altera Quartus.
 RTL implementation of part of the PHY layer of a WiMax system; namely “Channel Coding” (QPSK only) as described in section 8.4.9 in WiMax Standard (IEEE Std 802.16-2007). WiMax PHY including “Channel Coding” has different parameters that are set by the MAC layer. There are five different blocks within the “Chanel Coding”, each has different parameters that might require several implementations. In this project only one implementation per block is done.
 
 ![image](https://user-images.githubusercontent.com/107650627/209715272-3f0f1dbf-6363-48d6-a603-fd293e160141.png)
