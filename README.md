@@ -57,7 +57,7 @@ Note: ***This project uses a PLL IP. The project was verified on a DE0-CV board 
 
 ![image](https://user-images.githubusercontent.com/107650627/210175907-2f2b92b9-524f-490f-b786-71b26ab15f65.png)
 
-The pass signal turns to 1 only if all the Q and I output bits ar valid
+The pass signal turns to 1 only if all the Q and I output bits ar valid.
 
 
 **For more information about each block implementation, FSM, waveform and results, check the Report.pdf file**
